@@ -11,7 +11,7 @@ import tempfile
 load_dotenv()
 API_KEY = os.getenv("BIGKINDS_KEY")
 
-app = Flask(__name__, static_folder='../build', static_url_path='/')
+app = Flask(__name__, static_folder='build', static_url_path='/')
 CORS(app)
 
 @app.route('/api/search', methods=['POST'])

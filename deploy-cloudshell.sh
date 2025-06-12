@@ -63,6 +63,9 @@ if [ ! -d "build" ]; then
     exit 1
 fi
 
+echo -e "${YELLOW}빌드된 파일 확인:${NC}"
+ls -la build/
+
 # Docker 이미지 빌드
 echo -e "${GREEN}4. Docker 이미지 빌드...${NC}"
 docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME -f backend/Dockerfile .
