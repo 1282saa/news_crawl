@@ -38,7 +38,7 @@ def search_news():
             "sort": {"date": "desc"},
             "return_from": 0,
             "return_size": data.get('limit', 500),
-            "fields": ["title", "published_at", "provider", "byline"]
+            "fields": ["title", "published_at", "provider", "byline", "news_id", "provider_link_page"]
         }
     }
     
@@ -57,7 +57,8 @@ def search_news():
                     "제목": doc.get("title", ""),
                     "발행시간": doc.get("published_at", ""),
                     "언론사": doc.get("provider", ""),
-                    "기자": doc.get("byline", "")
+                    "기자": doc.get("byline", ""),
+                    "링크": doc.get("provider_link_page", "")
                 })
             
             return jsonify({
@@ -118,5 +119,6 @@ def not_found(e):
     return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 8080))
-    app.run(debug=False, host='0.0.0.0', port=port)
+    # 로컬 개발용 포트 5000, 배포용 포트 8080
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
