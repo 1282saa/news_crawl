@@ -43,7 +43,7 @@ npm run build
 
 # Docker 이미지 빌드 및 푸시
 echo -e "${GREEN}5. Docker 이미지 빌드...${NC}"
-docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME -f backend/Dockerfile .
+docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME .
 
 echo -e "${GREEN}6. Docker 이미지 푸시...${NC}"
 docker push gcr.io/$PROJECT_ID/$SERVICE_NAME

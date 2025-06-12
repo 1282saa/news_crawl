@@ -68,7 +68,7 @@ ls -la build/
 
 # Docker 이미지 빌드
 echo -e "${GREEN}4. Docker 이미지 빌드...${NC}"
-docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME -f backend/Dockerfile .
+docker build -t gcr.io/$PROJECT_ID/$SERVICE_NAME .
 
 if [ $? -ne 0 ]; then
     echo -e "${RED}ERROR: Docker 빌드 실패${NC}"

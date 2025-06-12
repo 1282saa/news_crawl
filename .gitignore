@@ -20,6 +20,9 @@
 # Backend environment
 backend/.env
 
+# Keep requirements.txt in root for Docker build
+!requirements.txt
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
